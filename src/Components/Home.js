@@ -1,9 +1,11 @@
-import Router from '../router';
+
 
 function Home() {
-    return (
+
+     return (
         <>
-            <p>hi i'm home</p>
+            <button onclick="location.href='ModalTest1.js'">modaltest calendar</button>
+            <button onclick="location.href='ModalTest1.js'">modaltest diary</button>
         </>
     );
 }
