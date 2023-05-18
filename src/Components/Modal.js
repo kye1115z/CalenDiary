@@ -10,7 +10,7 @@ function Modal({ onClose, appname, date }) {
   };
 
   //박스 이동하기
-  const [box, setBox] = useState({left:20, top: 20});
+  const [box, setBox] = useState({left:35, top: 200});
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({x:0, y:0})
 
@@ -98,7 +98,20 @@ function Modal({ onClose, appname, date }) {
           onMouseUp={handleMouseUp}>
           {appname === 'calendar' ? (
           <Contents>
-            <h1>This is a Calendar Modal</h1>
+             <Button onClick={handleClose}>닫기</Button>
+            <div className="Header" style={{marginBottom: "0.3rem"}}>
+              <button 
+                onClick={onClick}
+                style={{border:"none",
+                        margin: "0",
+                        padding: "0",
+                        cursor:"pointer"}}>
+              </button>
+              <p>캘린더 일정 어떻게 추가?</p>
+            </div>
+            <div className="dateBox">
+                <p className="dateName">{date[0].year}년 {date[0].month}월 {date[0].day}일</p>
+            </div>
           </Contents>
           ) :
           (<Contents>
@@ -124,11 +137,12 @@ function Modal({ onClose, appname, date }) {
                 date={date}
                 />)}
               <p>내가 해냄</p>
-            </div>
-            <div className="dateBox">
+              <div className="dateBox">
               <p className="dateName">{date[0].year}년 {date[0].month}월 {date[0].day}일</p>
             </div>
-              <form onSubmit={handleSubmit}>
+            </div>
+              <form onSubmit={handleSubmit}
+                    style={{height: "100px"}}>
                 <Input
                   type="text"
                   name="note"
@@ -166,8 +180,6 @@ const ModalWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 50%;
-  left: 50%;
   cursor: grabbing;
 `;
 
@@ -197,6 +209,7 @@ const Contents = styled.div`
   }
   .Header {
     display: flex;
+
   }
 `;
 const Button = styled.button`
@@ -216,7 +229,8 @@ const Input = styled.textarea`
   all: unset;
   display: block;
   width: 90%;
-  height: ${({ row, theme }) => +theme.listSize * row + 4 }px;
+  /* height: ${({ row, theme }) => + theme.listSize * row + 20 }px; */
+  height: 100px;
   overflow-wrap: break-word;
   word-break: break-all;
   white-space: pre-wrap;

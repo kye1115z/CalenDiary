@@ -13,19 +13,24 @@ function EmojiModal({ onClose }) {
         <ModalWrap>
           <Contents>
               <Button onClick={handleClose}>
-                <BsEmojiSunglasses />
+                <BsEmojiSunglasses 
+                  style={{width: "20px", height: "20px"}} />
               </Button>
               <Button onClick={handleClose}>
-                <BsEmojiSunglasses />
+                <BsEmojiSunglasses 
+                  style={{width: "20px", height: "20px"}} />
               </Button>
               <Button onClick={handleClose}>
-                <BsEmojiSunglasses />
+                <BsEmojiSunglasses 
+                  style={{width: "20px", height: "20px"}} />
               </Button>
               <Button onClick={handleClose}>
-                <BsEmojiSunglasses />
+                <BsEmojiSunglasses 
+                  style={{width: "20px", height: "20px"}} />
               </Button>
               <Button onClick={handleClose}>
-                <BsEmojiSunglasses />
+                <BsEmojiSunglasses 
+                  style={{width: "20px", height: "20px"}} />
               </Button>
           </Contents>
         </ModalWrap>
@@ -51,15 +56,20 @@ const Contents = styled.div`
   width: 95%;
   height: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `;
 const Button = styled.button`
   border: none;
-  font-weight: 200;
+  width: 20%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   &:hover {
     text-shadow: 1px 1px 1px gray;
   }
 `;
+
 export default EmojiModal;
