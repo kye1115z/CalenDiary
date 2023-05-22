@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 function Home() {
-     return (
-        <>  
+    return (
+        <>
             <Link to="/modaltest1">
                 <button>modaltest calendar</button>
             </Link>
